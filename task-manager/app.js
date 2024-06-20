@@ -7,7 +7,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const routes = require('./routes/router');
 dotenv.config({path: path.resolve(__dirname, 'envfile.env')});
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3300;
 app.listen(port,()=>{
     console.log("SERVER IS LISTENING  ON PORT "+port);
 })
@@ -35,6 +35,3 @@ mongoose.connect("mongodb+srv://Nproject:newproject@testcluster.udr6vli.mongodb.
 }).catch((err) => {
     console.log("database connection failed "+err);
 });
-
-
-
