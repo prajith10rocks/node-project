@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const handleBars = require('express-handlebars');
 const path = require('path');
 const mongoose = require('mongoose');
+const routes = require('./routes/router');
 dotenv.config({path: path.resolve(__dirname, 'envfile.env')});
 const port = process.env.PORT || 5000;
 app.listen(port,()=>{
@@ -19,7 +20,7 @@ app.use(express.static(publicDirectoryPath));
 //middleware
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
-
+app.use('/',routes);
 
 //set view engine
 const hbs = handleBars.create({extname:'.hbs',});
@@ -33,5 +34,7 @@ mongoose.connect("mongodb+srv://Nproject:newproject@testcluster.udr6vli.mongodb.
     console.log("DATABASE CONNECTED");
 }).catch((err) => {
     console.log("database connection failed "+err);
-})
+});
+
+
 
