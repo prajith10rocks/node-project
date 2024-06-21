@@ -36,6 +36,3 @@ mongoose.connect("mongodb+srv://Nproject:newproject@testcluster.udr6vli.mongodb.
 }).catch((err) => {
     console.log("database connection failed "+err);
 });
-
-
-
