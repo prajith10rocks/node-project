@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes/router');
 dotenv.config({path: path.resolve(__dirname, 'envfile.env')});
 const port = process.env.PORT || 5000;
+
 app.listen(port,()=>{
     console.log("SERVER IS LISTENING  ON PORT "+port);
 })
