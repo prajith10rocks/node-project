@@ -1,5 +1,6 @@
-import mongoose from 'mongoose';
-const signupSheme = mongoose.model({
+import mongoose from "mongoose";
+
+const signupScheme = mongoose.Schema({
     USERNAME:{
         type:String,
         required:true
@@ -13,5 +14,6 @@ const signupSheme = mongoose.model({
         required:true
     }
 });
-const signupModel = mongoose.model('signupDetails',signupSheme);
+
+const signupModel = mongoose.model('signupDetails',signupScheme);
 module.exports = signupModel;
